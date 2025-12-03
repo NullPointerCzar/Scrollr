@@ -2,7 +2,7 @@ import User from '../models/User.js';
 import generateToken from '../utils/generateToken.js';
 
 export const registerUser = async (req, res) => {
-  const { username, email, password } = req.body;
+  const { username, email, password, role } = req.body;
 
   try {
     // Check email exists
@@ -18,7 +18,7 @@ export const registerUser = async (req, res) => {
     }
 
     // Create user
-    const user = await User.create({ username, email, password });
+    const user = await User.create({ username, email, password});
 
     if (user) {
       res.status(201).json({
@@ -55,16 +55,6 @@ export const authUser = async (req, res) => {
       console.log("Invalid username or password")
       res.status(401).json({ message: "Invalid email or password" });
     }
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
-
-export const getAllUsers = async (req, res) => {
-
-  try {
-    const users = await User.find({});
-    res.json(users);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

@@ -32,6 +32,11 @@ const userSchema = mongoose.Schema(
       maxlength: 160,
       default: "",
     },
+    role: {
+      type: String,
+      enum: ["user", "admin"],
+      default: "user", // all normal users are "user" by default
+    },
     followers: [
       {
         type: mongoose.Schema.Types.ObjectId,
@@ -50,9 +55,7 @@ const userSchema = mongoose.Schema(
 
 // Password hashing middleware
 userSchema.pre("save", async function () {
-  if (!this.isModified("password")) {
-    return;
-  }
+  if (!this.isModified("password")) return;
 
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
