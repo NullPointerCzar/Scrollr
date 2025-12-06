@@ -1,7 +1,5 @@
-import axios from "axios";
+import API from "./axiosInstance.js"; // Use configured axios instance with token
 
-const API = "http://localhost:5001/api/auth";
-
-export const signup = (formData) => axios.post(`${API}/signup`, formData);
-export const login = (formData) => axios.post(`${API}/login`, formData);
+export const signup = (formData) => API.post("/api/auth/signup", formData);
+export const login = (formData) => API.post("/api/auth/login", formData);
 

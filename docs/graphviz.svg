@@ -1,0 +1,225 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="993pt" height="735pt" viewBox="0.00 0.00 993.00 735.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 731)">
+<title>Scrollr</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-731 988.74,-731 988.74,4 -4,4"/>
+<g id="clust1" class="cluster">
+<title>cluster_core</title>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="8,-498 8,-683 976.74,-683 976.74,-498 8,-498"/>
+<text xml:space="preserve" text-anchor="middle" x="492.37" y="-666.4" font-family="Times,serif" font-size="14.00">PHASE 1 — Core (MUST)</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_social</title>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="421.54,-239 421.54,-490 643.63,-490 643.63,-239 421.54,-239"/>
+<text xml:space="preserve" text-anchor="middle" x="532.59" y="-473.4" font-family="Times,serif" font-size="14.00">PHASE 2 — Social (HIGH VALUE)</text>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_optional</title>
+<polygon fill="none" stroke="black" stroke-dasharray="5,2" points="441.18,-8 441.18,-231 624,-231 624,-8 441.18,-8"/>
+<text xml:space="preserve" text-anchor="middle" x="532.59" y="-214.4" font-family="Times,serif" font-size="14.00">PHASE 3 — Optional (NICE)</text>
+</g>
+<!-- Frontend -->
+<g id="node1" class="node">
+<title>Frontend</title>
+<polygon fill="none" stroke="black" points="220.2,-542 16,-542 16,-538 12,-538 12,-534 16,-534 16,-514 12,-514 12,-510 16,-510 16,-506 220.2,-506 220.2,-542"/>
+<polyline fill="none" stroke="black" points="16,-538 20,-538 20,-534 16,-534"/>
+<polyline fill="none" stroke="black" points="16,-514 20,-514 20,-510 16,-510"/>
+<text xml:space="preserve" text-anchor="middle" x="118.1" y="-527.3" font-family="Times,serif" font-size="11.00">Frontend (React)</text>
+<text xml:space="preserve" text-anchor="middle" x="118.1" y="-514.1" font-family="Times,serif" font-size="11.00">Routing, UI, AuthContext, ProtectedRoute</text>
+</g>
+<!-- AuthAPI -->
+<g id="node7" class="node">
+<title>AuthAPI</title>
+<path fill="none" stroke="black" d="M568.12,-542C568.12,-542 496.06,-542 496.06,-542 490.06,-542 484.06,-536 484.06,-530 484.06,-530 484.06,-518 484.06,-518 484.06,-512 490.06,-506 496.06,-506 496.06,-506 568.12,-506 568.12,-506 574.12,-506 580.12,-512 580.12,-518 580.12,-518 580.12,-530 580.12,-530 580.12,-536 574.12,-542 568.12,-542"/>
+<text xml:space="preserve" text-anchor="middle" x="532.09" y="-527.3" font-family="Times,serif" font-size="11.00">Auth API</text>
+<text xml:space="preserve" text-anchor="middle" x="532.09" y="-514.1" font-family="Times,serif" font-size="11.00">/signup /login /me</text>
+</g>
+<!-- Frontend&#45;&gt;AuthAPI -->
+<g id="edge1" class="edge">
+<title>Frontend-&gt;AuthAPI</title>
+<path fill="none" stroke="black" d="M220.68,-524C299.8,-524 406.86,-524 472.34,-524"/>
+<polygon fill="black" stroke="black" points="472.15,-527.5 482.15,-524 472.15,-520.5 472.15,-527.5"/>
+<text xml:space="preserve" text-anchor="middle" x="325.87" y="-528.2" font-family="Times,serif" font-size="14.00">Auth requests (axios)</text>
+</g>
+<!-- UserAPI -->
+<g id="node8" class="node">
+<title>UserAPI</title>
+<path fill="none" stroke="black" d="M568.26,-456.8C568.26,-456.8 495.92,-456.8 495.92,-456.8 489.92,-456.8 483.92,-450.8 483.92,-444.8 483.92,-444.8 483.92,-421.2 483.92,-421.2 483.92,-415.2 489.92,-409.2 495.92,-409.2 495.92,-409.2 568.26,-409.2 568.26,-409.2 574.26,-409.2 580.26,-415.2 580.26,-421.2 580.26,-421.2 580.26,-444.8 580.26,-444.8 580.26,-450.8 574.26,-456.8 568.26,-456.8"/>
+<text xml:space="preserve" text-anchor="middle" x="532.09" y="-442.9" font-family="Times,serif" font-size="11.00">User API</text>
+<text xml:space="preserve" text-anchor="middle" x="532.09" y="-429.7" font-family="Times,serif" font-size="11.00">/profile GET/PUT</text>
+<text xml:space="preserve" text-anchor="middle" x="532.09" y="-416.5" font-family="Times,serif" font-size="11.00">/follow</text>
+</g>
+<!-- Frontend&#45;&gt;UserAPI -->
+<g id="edge3" class="edge">
+<title>Frontend-&gt;UserAPI</title>
+<path fill="none" stroke="black" d="M205.48,-505.5C264.19,-492.86 343.6,-475.63 413.54,-460 432.76,-455.71 453.71,-450.92 472.54,-446.59"/>
+<polygon fill="black" stroke="black" points="473.22,-450.03 482.17,-444.37 471.64,-443.21 473.22,-450.03"/>
+<text xml:space="preserve" text-anchor="middle" x="325.87" y="-502.56" font-family="Times,serif" font-size="14.00">Profile, Follow</text>
+</g>
+<!-- PostAPI -->
+<g id="node9" class="node">
+<title>PostAPI</title>
+<path fill="none" stroke="black" d="M567.67,-620.4C567.67,-620.4 496.51,-620.4 496.51,-620.4 490.51,-620.4 484.51,-614.4 484.51,-608.4 484.51,-608.4 484.51,-571.6 484.51,-571.6 484.51,-565.6 490.51,-559.6 496.51,-559.6 496.51,-559.6 567.67,-559.6 567.67,-559.6 573.67,-559.6 579.67,-565.6 579.67,-571.6 579.67,-571.6 579.67,-608.4 579.67,-608.4 579.67,-614.4 573.67,-620.4 567.67,-620.4"/>
+<text xml:space="preserve" text-anchor="middle" x="532.09" y="-606.5" font-family="Times,serif" font-size="11.00">Post API</text>
+<text xml:space="preserve" text-anchor="middle" x="532.09" y="-593.3" font-family="Times,serif" font-size="11.00">POST /posts</text>
+<text xml:space="preserve" text-anchor="middle" x="532.09" y="-580.1" font-family="Times,serif" font-size="11.00">GET /posts</text>
+<text xml:space="preserve" text-anchor="middle" x="532.09" y="-566.9" font-family="Times,serif" font-size="11.00">PATCH /posts/:id</text>
+</g>
+<!-- Frontend&#45;&gt;PostAPI -->
+<g id="edge2" class="edge">
+<title>Frontend-&gt;PostAPI</title>
+<path fill="none" stroke="black" d="M220.44,-542.02C226.45,-543.04 232.4,-544.04 238.2,-545 319.46,-558.4 413.61,-572.64 472.77,-581.43"/>
+<polygon fill="black" stroke="black" points="472.21,-584.88 482.62,-582.89 473.24,-577.96 472.21,-584.88"/>
+<text xml:space="preserve" text-anchor="middle" x="325.87" y="-576.54" font-family="Times,serif" font-size="14.00">Create / Fetch posts</text>
+</g>
+<!-- InteractionAPI -->
+<g id="node10" class="node">
+<title>InteractionAPI</title>
+<path fill="none" stroke="black" d="M562.15,-391C562.15,-391 502.03,-391 502.03,-391 496.03,-391 490.03,-385 490.03,-379 490.03,-379 490.03,-367 490.03,-367 490.03,-361 496.03,-355 502.03,-355 502.03,-355 562.15,-355 562.15,-355 568.15,-355 574.15,-361 574.15,-367 574.15,-367 574.15,-379 574.15,-379 574.15,-385 568.15,-391 562.15,-391"/>
+<text xml:space="preserve" text-anchor="middle" x="532.09" y="-376.3" font-family="Times,serif" font-size="11.00">Interaction API</text>
+<text xml:space="preserve" text-anchor="middle" x="532.09" y="-363.1" font-family="Times,serif" font-size="11.00">/like /comment</text>
+</g>
+<!-- Frontend&#45;&gt;InteractionAPI -->
+<g id="edge4" class="edge">
+<title>Frontend-&gt;InteractionAPI</title>
+<path fill="none" stroke="black" d="M128.12,-505.54C144.79,-473.77 183.76,-409.62 238.2,-383.2 315.18,-345.85 417.41,-353.17 478.5,-362.59"/>
+<polygon fill="black" stroke="black" points="477.85,-366.03 488.28,-364.18 478.97,-359.12 477.85,-366.03"/>
+<text xml:space="preserve" text-anchor="middle" x="325.87" y="-387.4" font-family="Times,serif" font-size="14.00">Like / Comment</text>
+</g>
+<!-- Cloudinary -->
+<g id="node12" class="node">
+<title>Cloudinary</title>
+<ellipse fill="none" stroke="black" cx="532.09" cy="-174" rx="56.89" ry="24.32"/>
+<text xml:space="preserve" text-anchor="middle" x="532.09" y="-177.3" font-family="Times,serif" font-size="11.00">Cloudinary</text>
+<text xml:space="preserve" text-anchor="middle" x="532.09" y="-164.1" font-family="Times,serif" font-size="11.00">Image uploads</text>
+</g>
+<!-- Frontend&#45;&gt;Cloudinary -->
+<g id="edge10" class="edge">
+<title>Frontend-&gt;Cloudinary</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M126.76,-505.67C142.78,-469.11 182.98,-386.21 238.2,-334.2 309.5,-267.05 414.28,-218.75 477.28,-193.67"/>
+<polygon fill="black" stroke="black" points="478.34,-197.02 486.37,-190.11 475.78,-190.5 478.34,-197.02"/>
+<text xml:space="preserve" text-anchor="middle" x="325.87" y="-338.4" font-family="Times,serif" font-size="14.00">Direct upload (signed) optional</text>
+</g>
+<!-- SearchIndex -->
+<g id="node14" class="node">
+<title>SearchIndex</title>
+<ellipse fill="none" stroke="black" cx="532.09" cy="-107" rx="74.17" ry="24.32"/>
+<text xml:space="preserve" text-anchor="middle" x="532.09" y="-110.3" font-family="Times,serif" font-size="11.00">Search (optional)</text>
+<text xml:space="preserve" text-anchor="middle" x="532.09" y="-97.1" font-family="Times,serif" font-size="11.00">Text index / Algolia</text>
+</g>
+<!-- Frontend&#45;&gt;SearchIndex -->
+<g id="edge14" class="edge">
+<title>Frontend-&gt;SearchIndex</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M119.36,-505.67C121.23,-447.16 135.4,-263.29 238.2,-171.2 268.95,-143.65 374.03,-125.6 449.52,-115.85"/>
+<polygon fill="black" stroke="black" points="449.92,-119.32 459.4,-114.6 449.04,-112.38 449.92,-119.32"/>
+<text xml:space="preserve" text-anchor="middle" x="325.87" y="-175.4" font-family="Times,serif" font-size="14.00">Query (optional)</text>
+</g>
+<!-- FeedUI -->
+<g id="node2" class="node">
+<title>FeedUI</title>
+<path fill="none" stroke="black" d="M167.88,-596C167.88,-596 68.33,-596 68.33,-596 62.33,-596 56.33,-590 56.33,-584 56.33,-584 56.33,-572 56.33,-572 56.33,-566 62.33,-560 68.33,-560 68.33,-560 167.88,-560 167.88,-560 173.88,-560 179.88,-566 179.88,-572 179.88,-572 179.88,-584 179.88,-584 179.88,-590 173.88,-596 167.88,-596"/>
+<text xml:space="preserve" text-anchor="middle" x="118.1" y="-581.3" font-family="Times,serif" font-size="11.00">Home Feed UI</text>
+<text xml:space="preserve" text-anchor="middle" x="118.1" y="-568.1" font-family="Times,serif" font-size="11.00">Post composer, Feed list</text>
+</g>
+<!-- ProfileUI -->
+<g id="node3" class="node">
+<title>ProfileUI</title>
+<path fill="none" stroke="black" d="M566.73,-283C566.73,-283 497.45,-283 497.45,-283 491.45,-283 485.45,-277 485.45,-271 485.45,-271 485.45,-259 485.45,-259 485.45,-253 491.45,-247 497.45,-247 497.45,-247 566.73,-247 566.73,-247 572.73,-247 578.73,-253 578.73,-259 578.73,-259 578.73,-271 578.73,-271 578.73,-277 572.73,-283 566.73,-283"/>
+<text xml:space="preserve" text-anchor="middle" x="532.09" y="-268.3" font-family="Times,serif" font-size="11.00">Profile UI</text>
+<text xml:space="preserve" text-anchor="middle" x="532.09" y="-255.1" font-family="Times,serif" font-size="11.00">View/Edit profile</text>
+</g>
+<!-- PostUI -->
+<g id="node4" class="node">
+<title>PostUI</title>
+<path fill="none" stroke="black" d="M160.53,-650C160.53,-650 75.68,-650 75.68,-650 69.68,-650 63.68,-644 63.68,-638 63.68,-638 63.68,-626 63.68,-626 63.68,-620 69.68,-614 75.68,-614 75.68,-614 160.53,-614 160.53,-614 166.53,-614 172.53,-620 172.53,-626 172.53,-626 172.53,-638 172.53,-638 172.53,-644 166.53,-650 160.53,-650"/>
+<text xml:space="preserve" text-anchor="middle" x="118.1" y="-635.3" font-family="Times,serif" font-size="11.00">Post UI</text>
+<text xml:space="preserve" text-anchor="middle" x="118.1" y="-622.1" font-family="Times,serif" font-size="11.00">Create / Edit / Delete</text>
+</g>
+<!-- SearchUI -->
+<g id="node5" class="node">
+<title>SearchUI</title>
+<path fill="none" stroke="black" d="M550.86,-337C550.86,-337 513.32,-337 513.32,-337 507.32,-337 501.32,-331 501.32,-325 501.32,-325 501.32,-313 501.32,-313 501.32,-307 507.32,-301 513.32,-301 513.32,-301 550.86,-301 550.86,-301 556.86,-301 562.86,-307 562.86,-313 562.86,-313 562.86,-325 562.86,-325 562.86,-331 556.86,-337 550.86,-337"/>
+<text xml:space="preserve" text-anchor="middle" x="532.09" y="-322.3" font-family="Times,serif" font-size="11.00">Search UI</text>
+<text xml:space="preserve" text-anchor="middle" x="532.09" y="-309.1" font-family="Times,serif" font-size="11.00">Find users</text>
+</g>
+<!-- Backend -->
+<g id="node6" class="node">
+<title>Backend</title>
+<polygon fill="none" stroke="black" points="176.21,-727 59.99,-727 59.99,-723 55.99,-723 55.99,-719 59.99,-719 59.99,-699 55.99,-699 55.99,-695 59.99,-695 59.99,-691 176.21,-691 176.21,-727"/>
+<polyline fill="none" stroke="black" points="59.99,-723 63.99,-723 63.99,-719 59.99,-719"/>
+<polyline fill="none" stroke="black" points="59.99,-699 63.99,-699 63.99,-695 59.99,-695"/>
+<text xml:space="preserve" text-anchor="middle" x="118.1" y="-712.3" font-family="Times,serif" font-size="11.00">Backend (Express)</text>
+<text xml:space="preserve" text-anchor="middle" x="118.1" y="-699.1" font-family="Times,serif" font-size="11.00">API, Auth, Controllers</text>
+</g>
+<!-- DB -->
+<g id="node11" class="node">
+<title>DB</title>
+<path fill="none" stroke="black" d="M968.74,-549.35C968.74,-551.72 941.19,-553.65 907.27,-553.65 873.35,-553.65 845.79,-551.72 845.79,-549.35 845.79,-549.35 845.79,-510.65 845.79,-510.65 845.79,-508.28 873.35,-506.35 907.27,-506.35 941.19,-506.35 968.74,-508.28 968.74,-510.65 968.74,-510.65 968.74,-549.35 968.74,-549.35"/>
+<path fill="none" stroke="black" d="M968.74,-549.35C968.74,-546.98 941.19,-545.05 907.27,-545.05 873.35,-545.05 845.79,-546.98 845.79,-549.35"/>
+<text xml:space="preserve" text-anchor="middle" x="907.27" y="-533.3" font-family="Times,serif" font-size="11.00">MongoDB (Mongoose)</text>
+<text xml:space="preserve" text-anchor="middle" x="907.27" y="-520.1" font-family="Times,serif" font-size="11.00">Users, Posts, Comments</text>
+</g>
+<!-- AuthAPI&#45;&gt;DB -->
+<g id="edge5" class="edge">
+<title>AuthAPI-&gt;DB</title>
+<path fill="none" stroke="black" d="M580.35,-524.76C644.43,-525.79 759.45,-527.64 834.3,-528.84"/>
+<polygon fill="black" stroke="black" points="833.93,-532.34 843.98,-529 834.04,-525.34 833.93,-532.34"/>
+<text xml:space="preserve" text-anchor="middle" x="739.71" y="-532.9" font-family="Times,serif" font-size="14.00">Users</text>
+</g>
+<!-- UserAPI&#45;&gt;DB -->
+<g id="edge6" class="edge">
+<title>UserAPI-&gt;DB</title>
+<path fill="none" stroke="black" d="M580.55,-443.61C639,-456.92 741.18,-480.93 827.79,-505.2 830.05,-505.83 832.34,-506.49 834.65,-507.15"/>
+<polygon fill="black" stroke="black" points="833.51,-510.47 844.1,-509.95 835.5,-503.76 833.51,-510.47"/>
+<text xml:space="preserve" text-anchor="middle" x="739.71" y="-509.4" font-family="Times,serif" font-size="14.00">Read/Write Users</text>
+</g>
+<!-- PostAPI&#45;&gt;DB -->
+<g id="edge7" class="edge">
+<title>PostAPI-&gt;DB</title>
+<path fill="none" stroke="black" d="M580.06,-585.3C638.45,-579.08 741,-566.89 827.79,-550 829.96,-549.58 832.17,-549.13 834.39,-548.66"/>
+<polygon fill="black" stroke="black" points="835.1,-552.09 844.11,-546.52 833.59,-545.26 835.1,-552.09"/>
+<text xml:space="preserve" text-anchor="middle" x="739.71" y="-581.07" font-family="Times,serif" font-size="14.00">Read/Write Posts &amp; Comments</text>
+</g>
+<!-- PostAPI&#45;&gt;Cloudinary -->
+<g id="edge9" class="edge">
+<title>PostAPI-&gt;Cloudinary</title>
+<path fill="none" stroke="black" d="M484.1,-577.37C430.57,-560.25 347.61,-523.77 317.89,-456.4 274.03,-357 346.09,-313.17 421.54,-235 437.62,-218.35 459.24,-205.05 479.1,-195.18"/>
+<polygon fill="black" stroke="black" points="480.39,-198.44 487.92,-190.98 477.38,-192.12 480.39,-198.44"/>
+<text xml:space="preserve" text-anchor="middle" x="325.87" y="-443.8" font-family="Times,serif" font-size="14.00">Upload images</text>
+</g>
+<!-- InteractionAPI&#45;&gt;DB -->
+<g id="edge8" class="edge">
+<title>InteractionAPI-&gt;DB</title>
+<path fill="none" stroke="black" d="M574.65,-374.48C634.57,-378.3 746.92,-391.9 827.79,-440.2 851.06,-454.1 871.05,-477.26 885.03,-496.58"/>
+<polygon fill="black" stroke="black" points="882.13,-498.54 890.72,-504.73 887.87,-494.53 882.13,-498.54"/>
+<text xml:space="preserve" text-anchor="middle" x="739.71" y="-444.4" font-family="Times,serif" font-size="14.00">Update likes/comments</text>
+</g>
+<!-- Socket -->
+<g id="node13" class="node">
+<title>Socket</title>
+<ellipse fill="none" stroke="black" cx="532.09" cy="-40" rx="81.95" ry="24.32"/>
+<text xml:space="preserve" text-anchor="middle" x="532.09" y="-43.3" font-family="Times,serif" font-size="11.00">Socket.io (optional)</text>
+<text xml:space="preserve" text-anchor="middle" x="532.09" y="-30.1" font-family="Times,serif" font-size="11.00">Realtime Notifications</text>
+</g>
+<!-- InteractionAPI&#45;&gt;Socket -->
+<g id="edge11" class="edge">
+<title>InteractionAPI-&gt;Socket</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M489.68,-369.14C467.98,-365.62 441.91,-358.88 421.54,-346 264.03,-246.37 280.22,-265.43 309.72,-191.6 336.48,-124.62 360.23,-111.97 421.54,-74 431.74,-67.69 443.19,-62.47 454.76,-58.18"/>
+<polygon fill="black" stroke="black" points="455.66,-61.57 463.96,-54.99 453.37,-54.96 455.66,-61.57"/>
+<text xml:space="preserve" text-anchor="middle" x="325.87" y="-195.8" font-family="Times,serif" font-size="14.00">Emit notifications</text>
+</g>
+<!-- Socket&#45;&gt;Frontend -->
+<g id="edge12" class="edge">
+<title>Socket-&gt;Frontend</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M451.34,-35.12C385.95,-35.59 295.19,-47.14 238.2,-100.2 179.17,-155.17 136.52,-407.59 123.36,-494.5"/>
+<polygon fill="black" stroke="black" points="119.94,-493.72 121.93,-504.13 126.87,-494.76 119.94,-493.72"/>
+<text xml:space="preserve" text-anchor="middle" x="325.87" y="-104.4" font-family="Times,serif" font-size="14.00">Realtime events</text>
+</g>
+<!-- SearchIndex&#45;&gt;PostAPI -->
+<g id="edge13" class="edge">
+<title>SearchIndex-&gt;PostAPI</title>
+<path fill="none" stroke="black" stroke-dasharray="5,2" d="M464.21,-117.18C448.68,-122.22 433.29,-129.75 421.54,-141 332.04,-226.67 349.09,-281.51 328,-403.6 314.78,-480.06 359.5,-504.4 421.54,-551 436.71,-562.39 455.47,-570.65 473.21,-576.56"/>
+<polygon fill="black" stroke="black" points="472.05,-579.86 482.64,-579.49 474.13,-573.18 472.05,-579.86"/>
+<text xml:space="preserve" text-anchor="middle" x="325.87" y="-407.8" font-family="Times,serif" font-size="14.00">Index posts</text>
+</g>
+</g>
+</svg>

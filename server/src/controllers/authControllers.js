@@ -37,10 +37,10 @@ export const registerUser = async (req, res) => {
 };
 
 export const authUser = async (req, res) => {
-  const { email, password } = req.body;
+  const { username, email, password } = req.body;
 
   try {
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ username, email });
 
     if (user && (await user.matchPassword(password))) {
       res.json({

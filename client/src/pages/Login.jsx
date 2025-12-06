@@ -1,17 +1,21 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { login } from "../api/auth.js";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { AuthContext } from "../context/AuthContext";
 
 const Login = () => {
   const [form, setForm] = useState({ username: "", email: "", password: "" });
+  const navigate = useNavigate();
+  const { loginUser } = useContext(AuthContext);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = login(form);
-      console.log("Logged In");
+      const res = await login(form);
+      loginUser(res.data); // Store user data in context
+      navigate("/feed"); // Redirect to feed
     } catch (error) {
-      console.error(error.response.data);
+      console.error(error.response?.data);
     }
   };
 
