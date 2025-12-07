@@ -1,9 +1,13 @@
-import { useEffect, useState } from "react";
-import { createPost, getPosts } from "../api/posts";
+import { useEffect, useState, useContext } from "react";
+import { createPost, getPosts, deletePost } from "../api/posts";
+import { AuthContext } from "../context/AuthContext";
 
 export default function Feed() {
   const [text, setText] = useState("")
   const [posts, setPosts] = useState([])
+  const [deleting, setDeleting] = useState(null)
+  const [error, setError] = useState("")
+  const { user } = useContext(AuthContext)
 
   const fetchPosts = async ()=>{
     const res = await getPosts()
@@ -17,6 +21,21 @@ export default function Feed() {
     await createPost(text)
     setText("")    // clearing the input box after create a post
     fetchPosts()
+  }
+
+  const handleDelete = async (postId) => {
+    if (!confirm("Are you sure you want to delete this post?")) return;
+    
+    setDeleting(postId)
+    setError("")
+    try {
+      await deletePost(postId)
+      setPosts(posts.filter(p => p._id !== postId))
+    } catch (err) {
+      setError(err.response?.data?.message || "Failed to delete post")
+    } finally {
+      setDeleting(null)
+    }
   }
 
   useEffect(()=>{fetchPosts()}, [])
@@ -39,10 +58,23 @@ export default function Feed() {
         </button>
       </form>
 
+      {error && <div className="mb-4 p-3 bg-red-100 text-red-700 rounded">{error}</div>}
+
       <div className="space-y-4">
         {posts.map((p) => (
           <div key={p._id} className="bg-white p-4 rounded shadow">
-            <strong className="block text-gray-800">{p.author.username}</strong>
+            <div className="flex justify-between items-start">
+              <strong className="block text-gray-800">{p.author.username}</strong>
+              {user && user._id === p.author._id && (
+                <button
+                  onClick={() => handleDelete(p._id)}
+                  disabled={deleting === p._id}
+                  className="text-red-600 hover:text-red-800 text-sm font-medium transition disabled:opacity-50"
+                >
+                  {deleting === p._id ? "Deleting..." : "Delete"}
+                </button>
+              )}
+            </div>
             <p className="mt-2 text-gray-700">{p.text}</p>
             <small className="block mt-2 text-gray-500">{new Date(p.createdAt).toLocaleString()}</small>
           </div>
