@@ -9,8 +9,26 @@ dotenv.config();
 
 const app = express();
 
-// Middlewares
-app.use(cors());
+// Configure CORS for deployment
+const allowedOrigins = [
+  "http://localhost:5173",
+  "http://localhost:3000",
+  "https://scrollrmedia.vercel.app",
+  process.env.FRONTEND_URL,
+].filter(Boolean);
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      console.warn(`CORS blocked origin: ${origin}`);
+      callback(null, true); // Allow for debugging
+    }
+  },
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
