@@ -37,25 +37,40 @@ export const registerUser = async (req, res) => {
 };
 
 export const authUser = async (req, res) => {
-  const { username, email, password } = req.body;
+  const { email, password } = req.body;
 
   try {
-    const user = await User.findOne({ username, email });
-
-    if (user && (await user.matchPassword(password))) {
-      res.json({
-        _id: user._id,
-        username: user.username,
-        email: user.email,
-        avatar: user.avatar,
-        token: generateToken(user._id),
-      });
-      console.log("Logged in")
-    } else {
-      console.log("Invalid username or password")
-      res.status(401).json({ message: "Invalid email or password" });
+    // Validate input
+    if (!email || !password) {
+      return res.status(400).json({ message: "Email and password are required" });
     }
+
+    // Find user by email
+    const user = await User.findOne({ email });
+
+    // User not found
+    if (!user) {
+      return res.status(401).json({ message: "Account not found. Please sign up first." });
+    }
+
+    // Check password
+    const isPasswordValid = await user.matchPassword(password);
+
+    if (!isPasswordValid) {
+      return res.status(401).json({ message: "Invalid password. Please try again." });
+    }
+
+    // Login successful
+    res.json({
+      _id: user._id,
+      username: user.username,
+      email: user.email,
+      avatar: user.avatar,
+      token: generateToken(user._id),
+    });
+    console.log(`User ${user.username} logged in`);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error("Login error:", error);
+    res.status(500).json({ message: "Server error. Please try again later." });
   }
 };
