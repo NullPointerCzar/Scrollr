@@ -73,7 +73,7 @@ ISC
 
 ## 👨‍💻 Author
 
-Created by [Your Name]
+Created by NullPointerCzar
 
 ---
 
